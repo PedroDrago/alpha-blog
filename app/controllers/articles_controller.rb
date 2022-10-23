@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def show
-    @article = Article.find(params[:id])
+    get_article
 
   end
 
@@ -24,4 +24,16 @@ class ArticlesController < ApplicationController
       render 'new'
     end
   end
+
+
+  
+
+
+
+
+  private
+  def get_article
+    @article = Article.find(params[:id])
+  end
+
 end

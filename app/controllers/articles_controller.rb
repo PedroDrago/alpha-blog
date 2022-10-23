@@ -7,12 +7,10 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-
   end
 
   def new
     @article = Article.new
-
   end
 
   def create
@@ -25,6 +23,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+
+  end
+
   def update
     if @article.update(article_params)
       flash[:notice] = 'Article was update successfully'
@@ -32,22 +34,12 @@ class ArticlesController < ApplicationController
     else
       render 'edit'
     end
-
-  end
-
-  def edit
-    
   end
 
   def destroy
     @article.destroy
     redirect_to articles_path
-
   end
-
-  
-
-
 
 
   private

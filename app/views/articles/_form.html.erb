@@ -2,7 +2,7 @@
     <h2>The following errors prevented the article from being submited: </h2>
     <ul>
         <% @article.errors.full_messages.each do |error| %>
-            <li><%=error%></li>
+            <li><%= error %></li>
         <% end %>
     </ul>
 <% end %>

@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :get_article, only: [:show, :edit, :update]
 
   def show
-    get_article
 
   end
 
@@ -26,7 +26,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    get_article
     if @article.update(article_params)
       flash[:notice] = 'Article was update successfully'
       redirect_to @article
@@ -37,8 +36,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    get_article
-
+    
   end
 
   

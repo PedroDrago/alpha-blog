@@ -1,0 +1,32 @@
+<h1>List of articles</h1>
+
+<table>
+    <th>
+        <tr>
+            <th>Title</th>
+            <th>description</th>
+        </tr>
+    </th>
+
+    <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+                <td> <%= article.title %> </td>
+                <td> <%= article.description %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+

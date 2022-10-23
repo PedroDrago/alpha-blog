@@ -25,6 +25,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def update
+
+  end
+
+  def edit
+    get_article
+
+  end
 
   
 

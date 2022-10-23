@@ -9,4 +9,5 @@
 </ul>
 
 <p> <strong>P.S. </strong> Since my focus on the beggining of the project was build a CRUD, i didn't use scaffold for studying purposes.</p>
+
 [alpha-blog in rails 7](https://github.com/PedroDrago/alpha-blog)

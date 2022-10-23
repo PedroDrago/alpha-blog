@@ -8,9 +8,8 @@
 <% end %>
 
 
-<%= form_with(model: @article, local: true, data: { turbo: false }) do |f| %>
-    <p>
-        <%= f.label :title %><br>
+<%= form_with(model: @article, local: true) do |f| %>
+    <r>
         <%= f.text_field :title %>
     </p>
 

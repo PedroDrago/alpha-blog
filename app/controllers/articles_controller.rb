@@ -10,11 +10,13 @@ class ArticlesController < ApplicationController
 
   end
 
-  def create
+  def new
+    @article = Article.new
 
   end
 
-  def new
-    
+  def create
+    @article = Article.new(params.require(:article).permit(:title, :description))
+
   end
 end

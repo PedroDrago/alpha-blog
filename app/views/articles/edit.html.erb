@@ -1,4 +1,7 @@
 <h1 class="text-center" >Edit an Article</h1>
 
 <%= render 'form' %>
-<%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure?'} %>
+
+<div class="container text-center">
+<%= link_to 'Delete', article_path, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger btn-lg" %>
+</div>

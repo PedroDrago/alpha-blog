@@ -1,29 +1,31 @@
 <h1 class="text-center mt-2">List of articles</h1>
 <% @articles.each do |article| %>
 <div class="row justify-content-md-center">
-<div class="col-5">
-    <div class="container">
-        <div class="card text-center shadow-sm mb-5 bg-white rounded">
-          <div class="card-header">
-            Drago
-          </div>
-          <div class="card-body ">
-            <h5 class="card-title"><%= article.title %></h5>
-            <p class="card-text"> <%= truncate(article.description, length: 100) %> </p>
-            <a href=<%= edit_article_path(article) %> class="btn btn-info">Edit</a>
-            <a href=<%= article_path(article) %> class="btn btn-primary">Read</a>
-            <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-          </div>
-          <div class="card-footer text-muted">
-            <small>Created <%= time_ago_in_words(article.created_at) %> ago , edited <%= time_ago_in_words(article.updated_at) %> ago</small>
-          </div>
+    <div class="col-5">
+        <div class="container">
+
+            <div class="card text-center shadow-sm mb-5 bg-white rounded">
+              <div class="card-header">
+                Drago
+              </div>
+              <div class="card-body ">
+                <h5 class="card-title"><%= article.title %></h5>
+                
+                <p class="card-text"> <%= truncate(article.description, length: 100) %> </p>
+                <a href=<%= edit_article_path(article) %> class="btn btn-outline-info">Edit</a>
+                <a href=<%= article_path(article) %> class="btn btn-outline-primary">Read</a>
+                <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+                
+              </div>
+              <div class="card-footer text-muted">
+                <small>Created <%= time_ago_in_words(article.created_at) %> ago , edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+              </div>
+            </div>
         </div>
     </div>
 </div>
-</div>
 <br>
 <br>
-
-
 <% end %>
 
+<div class="container text-center"><a class="btn btn-primary btn-lg" href=<%= new_article_path %> role="button">Create</a></div>

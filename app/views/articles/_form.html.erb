@@ -7,20 +7,36 @@
     </ul>
 <% end %>
 
+<div class="row justify-content-center">
+	<div class="col-7">
+		<%= form_with(model: @article,class: "border  bg-light p-5 shadow-sm p-3 mb-5 bg-white rounded", local: true) do |f| %>
+			<div class="container">
+		    	<div class="form-group row">
+					<%= f.label :title, class: "col-2 col-form-label" %>
+					<div class="col-10">
+						<%= f.text_field :title, class: "form-control shadow-sm p-3 bg-white rounded", placeholder: 'Title of article' %>
+					</div>
+				</div>
 
-<%= form_with(model: @article, local: true) do |f| %>
-    <r>
-        <%= f.text_field :title %>
-    </p>
+		    	<div class="form-group row">
+		    	    <%= f.label :description, class: "col-2 col-form-label" %>
+		    	    <div class="col-10">
+						<%= f.text_area :description, rows: 7, class: "form-control shadow-sm p-3 bg-white rounded", placeholder: 'Description of article' %>
+					</div>
+		    	</div>
 
-    <p>
-        <%= f.label :description %><br>
-        <%= f.text_area :description %>
-    </p>
 
-    <p>
-        <%= f.submit %>
-    </p>
+				<div class="form-group row">
+					<%= f.submit class: "btn btn-outline-dark btn-lg"%>
+				</div>
+
+				<div class="form-group row">
+					<a href=<%= articles_path %> class="btn btn-dark btn">Cancel</a>
+				</div>
+
+				</div>
+	   </div>
 <% end %>
+</div>
 
-<%= link_to 'Cancel', articles_path %>
+

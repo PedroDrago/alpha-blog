@@ -1,10 +1,15 @@
 <% if @article.errors.any? %>
-    <h2>The following errors prevented the article from being submited: </h2>
-    <ul>
-        <% @article.errors.full_messages.each do |error| %>
-            <li><%= error %></li>
-        <% end %>
-    </ul>
+<div class="container">
+		<div class="alert alert-danger" role="alert">
+		  <h4 class="alert-heading">The following errors prevented the article from being submited: </h4>
+		  <hr>
+		  <ul>
+		  		<% @article.errors.full_messages.each do |error| %>
+					<li><%= error %></li>
+				<% end %>
+		  </ul>
+		</div>
+	</div>
 <% end %>
 
 <div class="row justify-content-center">

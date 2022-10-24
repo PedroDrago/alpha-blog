@@ -1,4 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
 
 #home-container {
     margin-top: 25px;
@@ -13,3 +18,10 @@
     justify-content: center;
 }
 
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+  }

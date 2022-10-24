@@ -23,7 +23,10 @@
 
 
     <% flash.each do |name, msg| %>
+    <div class="alert alert-success" role="alert">
       <%= msg %>
+    </div>
+    
     <% end %>
     <%= yield %>
   </body>

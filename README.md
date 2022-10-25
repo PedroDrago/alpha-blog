@@ -1,5 +1,7 @@
 # README
 
+TO-DO: Rethink project concept, transition from an article project to a message (like a mail or something) app, where people can leave messages in a mural.
+
 <p>This is my first first ruby on rails project..</p>
 <p>This project was started in rails 7 but i decided do transition to rails 6 (I rewrote the whole project). </p>
 <p>The reasons are: </p>

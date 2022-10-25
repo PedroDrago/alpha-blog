@@ -55,6 +55,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'net-smtp'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

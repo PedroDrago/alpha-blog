@@ -5,5 +5,23 @@ class UsersController < ApplicationController
 
   end
 
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "Welcome #{@user.username}, You have successfully sign up"
+      redirect_to articles_path
+    else
+      render 'new'
+    end
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:username, :email, :password)  
+  end
+
 
 end
+ 
+# "user"=>{"username"=>"drago", "email"=>"drago@email.com", "password"=>"dragosenha"},
+# "commit"=>"Create User", "controller"=>"users", "action"=>"create"} permitted: false>

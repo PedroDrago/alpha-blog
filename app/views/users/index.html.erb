@@ -1,0 +1,23 @@
+<h1>Users</h1>
+
+<% @users.each do |user| %>
+<div class="row justify-content-md-center">
+      <div class="col-5">
+          <div class="container text-center">
+            <div class="card">
+            <div class="container mt-2">
+                <%= gravatar_for user, size: 200 %>
+            </div>
+              <div class="card-body">
+                <h5 class="card-title"> <%= user.username %> </h5>
+                <p class="card-text"> <%= user.articles.length %> articles </p>
+                <a href="#" class="btn btn-primary">View Profile</a>
+                <a href="#" class="btn btn-secondary">Edit Profile</a>
+
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+<% end %>
+

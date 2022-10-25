@@ -1,7 +1,7 @@
 <% if obj.errors.any? %>
-<div class="container">
+<div class="container mt-3 col-5">
 		<div class="alert alert-danger alert-dismissible fade show" role="alert">
-		  <h4 class="alert-heading">The following errors prevented the article from being submited: </h4>
+		  <h4 class="alert-heading text-center">The following errors prevented the user to be created: </h4>
 		  <hr>
 		  <ul>
 		  		<% obj.errors.full_messages.each do |error| %>

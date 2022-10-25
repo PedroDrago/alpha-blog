@@ -1,2 +1,10 @@
 module ApplicationHelper
+  def gravatar_for(user, options = { size: 80 })
+    email = user.email.downcase
+    hash = Digest::MD5.hexdigest(email)
+    size = options[:size]
+    gravatar = "https://www.gravatar.com/avatar/#{hash}?s=#{size}"
+    image_tag(gravatar, alt: user.username, class: 'rounded mx-auto d-block mb-2')
+  end
+  
 end

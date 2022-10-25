@@ -13,4 +13,5 @@
 [alpha-blog in rails 7](https://github.com/PedroDrago/alpha-blog-v7)
 
 <h3>App deployed!</h3>
+
 [alphablogdeploy](https://alphablogdeploy.herokuapp.com/)

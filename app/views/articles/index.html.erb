@@ -1,8 +1,15 @@
 <h1 class="text-center mt-2">List of articles</h1>
+
+<div class="flickr_pagination">
+      <%= will_paginate @article, :container => false %>
+</div>
 <% @articles.each do |article| %>
   <%= render 'shared/article-card', object: article %>
 <% end %>
 <div class="container text-center"><a class="btn btn-primary btn-lg" href=<%= new_article_path %> role="button">Create</a></div>
+
+<div class="flickr_pagination">
+    <%= will_paginate @article, :container => false %>
 </div>
 <br>
 <br>

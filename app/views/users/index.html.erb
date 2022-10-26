@@ -10,6 +10,7 @@
             </div>
               <div class="card-body">
                 <h5 class="card-title"> <%= user.username %> </h5>
+                <small class='text-muted'>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
                 <p class="card-text"> <%= user.articles.length %> articles </p>
                 <%= link_to 'Show Profile', user_path(user.id), class: "btn btn-primary" %>
                 <%= link_to 'Edit Profile', edit_user_path(user.id), class: "btn btn-secondary" %>

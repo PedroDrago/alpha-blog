@@ -7,8 +7,9 @@
 			<div class="container text-center mb-2">
 			
 				<% if params[:action] == 'edit' %>
-					<%= gravatar_for @user, size: 200 %>
-
+					<div class="container mb-5">
+						<%= gravatar_for @user, size: 200 %>
+					</div>
 				<% else %>
 
 					<%= show_svg('carbon_user-avatar.svg') %>

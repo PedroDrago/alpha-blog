@@ -11,8 +11,9 @@
               <div class="card-body">
                 <h5 class="card-title"> <%= user.username %> </h5>
                 <p class="card-text"> <%= user.articles.length %> articles </p>
-                <a href="#" class="btn btn-primary">View Profile</a>
-                <a href="#" class="btn btn-secondary">Edit Profile</a>
+                <%= link_to 'Show Profile', user_path(user.id), class: "btn btn-primary" %>
+                <%= link_to 'Edit Profile', edit_user_path(user.id), class: "btn btn-secondary" %>
+
 
               </div>
             </div>

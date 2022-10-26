@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body d-flex">
                 <div class="mr-auto">
-                  <h5 class="card-title font-weight-bold text-left"><%= object.title %></h5>
+                  <h5 class="card-title font-weight-bold text-left"><%= truncate(object.title, length: 40) %></h5>
                   <p class="card-text"> <%= truncate(object.description, length: 60) %> </p>
                 </div>
                 <div>

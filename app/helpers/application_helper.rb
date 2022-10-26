@@ -6,5 +6,13 @@ module ApplicationHelper
     gravatar = "https://www.gravatar.com/avatar/#{hash}?s=#{size}"
     image_tag(gravatar, alt: user.username, class: 'rounded mx-auto d-block mb-2')
   end
-  
+
+
+  def current_user
+    @current_user ||=  User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def logged_in?
+    !!current_user
+  end
 end

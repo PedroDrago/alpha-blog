@@ -9,6 +9,10 @@
 					<div class="container mb-2">
 						<%= gravatar_for @user, size: 200 %>
 					</div>
+
+									<button type="button" class="btn btn-secondary mb-5" data-container="body" data-toggle="popover" data-placement="right" data-content="Access gravatar.com, create an account with the same email used in your alpha blog account and then assign a photo there">
+				  Change your Photo
+				</button>
 				<% else %>
 
 					<%= show_svg('carbon_user-avatar.svg') %>
@@ -16,9 +20,7 @@
 					
 				<% end %>
 
-				<button type="button" class="btn btn-secondary mb-5" data-container="body" data-toggle="popover" data-placement="right" data-content="Access gravatar.com, create an account with the same email used in your alpha blog account and then assign a photo there">
-				  Change your Photo
-				</button>
+
 
 				
 

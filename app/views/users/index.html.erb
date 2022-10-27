@@ -17,7 +17,7 @@
                 <small class='text-muted'>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
                 <p class="card-text"> <%= pluralize(user.articles.count, 'article') %></p>
                 <%= link_to 'Show Profile', user_path(user.id), class: "btn btn-primary" %>
-                <% if logged_in? && current_user == user %>
+                <% if logged_in? && (current_user == user || current_user.admin?) %>
                   <%= link_to 'Edit Profile', edit_user_path(user.id), class: "btn btn-secondary" %>
                 <% end %>
 

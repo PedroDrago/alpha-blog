@@ -14,7 +14,7 @@
                 <div>
                   <a href=<%= article_path(object) %> class="btn btn-outline-primary">Read</a>
 
-                  <% if logged_in? && object.user == current_user %>
+                  <% if logged_in? && (object.user == current_user || current_user.admin?) %>
                     <a href=<%= edit_article_path(object) %> class="btn btn-outline-secondary">Edit</a>
                     <%= link_to 'Delete', article_path(object), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
                   <% end %>

@@ -3,7 +3,7 @@
 <div class="flickr_pagination">
       <%= will_paginate @article, :container => false %>
 </div>
-<% @articles.each do |article| %>
+<% @articles.reverse.each do |article| %>
   <%= render 'shared/article-card', object: article %>
 <% end %>
 

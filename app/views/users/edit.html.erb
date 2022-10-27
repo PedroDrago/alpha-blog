@@ -2,4 +2,4 @@
 
 <%= render 'form' %>	
 
-<%= link_to 'Delete', user_path(current_user), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-lg' %>
+<%= link_to 'Delete', user_path(@user), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-lg' %>

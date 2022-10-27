@@ -9,7 +9,7 @@
                 <div class="card-body d-flex">
                 <div class="mr-auto">
                   <h5 class="card-title font-weight-bold text-left"><%= truncate(object.title, length: 40) %></h5>
-                  <p class="card-text"> <%= truncate(object.description, length: 58) %> </p>
+                  <p class="card-text"> <%= truncate(object.description, length: 50) %> </p>
                 </div>
                 <div>
                   <a href=<%= article_path(object) %> class="btn btn-outline-primary">Read</a>

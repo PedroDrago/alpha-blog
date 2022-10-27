@@ -1,6 +1,4 @@
-<h1>Login</h1>
-
-<div class="row justify-content-center mt-2">
+<div class="row justify-content-center vertical-center" id="login-square">
 	<div class="col-4">
 		<%= form_with(scope: :session, url: login_path, class: "border  bg-light p-5 shadow-sm p-3 mb-5 bg-white rounded", local: true) do |f| %>
 			<div class="container">
@@ -30,7 +28,11 @@
 						<div class="container text-center mt-4">
 							<%= f.submit 'Login', class: "btn btn-primary btn-lg" %>
 						</div>
+<div class="container text-center mt-1">
+				<%= link_to "Sign up", signup_path %>
+</div>
 				</div>
+
 
 
 				

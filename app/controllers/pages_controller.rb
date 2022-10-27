@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def about
     
   end
+
+  def photo
+    
+  end
 end

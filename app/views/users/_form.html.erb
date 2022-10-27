@@ -48,7 +48,7 @@
 
 								<%= link_to 'Delete', user_path(@user), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-lg' %>
 								<div>
-									<%= link_to 'Cancel', users_path, class: "btn btn-outline-secondary btn-lg" %>
+									<%= link_to 'Cancel', user_path(@user), class: "btn btn-outline-secondary btn-lg" %>
 									<%= f.submit(@user.new_record? ? "Sign up" : "Update Account", class: "btn btn-primary btn-lg" )%>
 								</div>
 							</div>

@@ -5,20 +5,20 @@
     <%= will_paginate @users, :container => false %>
 </div>
 <% @users.each do |user| %>
-<div class="row justify-content-md-center">
-      <div class="col-5">
+<div class="mb-4 d-inline-block">
+      <div class="">
           <div class="container text-center">
             <div class="card">
-            <div class="container mt-2">
+            <div class="container mt-3">
                 <%= link_to (gravatar_for user, size: 200), user_path(user) %>
             </div>
               <div class="card-body">
                 <h5 class="card-title"> <%= user.username %> </h5>
                 <small class='text-muted'>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
                 <p class="card-text"> <%= pluralize(user.articles.count, 'article') %></p>
-                <%= link_to 'Show Profile', user_path(user.id), class: "btn btn-primary" %>
+                <%= link_to 'Show Profile', user_path(user.id), class: "btn btn-outline-primary" %>
                 <% if logged_in? && (current_user == user || current_user.admin?) %>
-                  <%= link_to 'Edit Profile', edit_user_path(user.id), class: "btn btn-secondary" %>
+                  <%= link_to 'Edit Profile', edit_user_path(user.id), class: "btn btn-outline-secondary" %>
                 <% end %>
 
 

@@ -29,21 +29,25 @@
             <li class="nav-item">
               <a class="nav-link" href= <%= articles_path %> >Articles</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href= <%= users_path %> >Users</a>
+
+            </li>
             
     
           </ul>
-    
-          <a class="btn btn-primary" href="#" role="button">Login</a>
-    
-    
+          <div>
+            <a class="btn btn-primary" href=<%= signup_path %> role="button">Signup</a>
+            <a class="btn btn-primary" href="" role="button">Login</a>
+          </div>
+          
         </div>
       </div>
     </nav>
 
 
-    <% flash.each do |name, message| %>
-      <%= message %>
-    <% end %>
+    <%= render 'layouts/flash' %>
 
     <%= yield %>
   </body>

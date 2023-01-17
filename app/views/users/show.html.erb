@@ -1,0 +1,13 @@
+<h1 class='text-center'> <%= @user.username %>'s Profile </h1>
+
+<div class="container border text-center col-2 pt-3 mb-3 pb-3">
+  <%= image_tag("gravatar-icon.png", :alt => "rss feed") %>
+</div>
+
+<% @user.articles.each do |article| %>
+  <%= render  'shared/article_card', article: article%>
+<% end %>
+
+<div class="container text-center">
+  <%= link_to 'Edit', edit_user_path, class: 'btn btn-secondary' %>
+</div>

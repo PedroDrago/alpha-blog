@@ -1,0 +1,12 @@
+<div class="container  mt-3">
+<% @users.each do |user| %>
+  <div class="card text-center d-inline-block align-items-center" style="width: 18rem;">
+      <%= image_tag("gravatar-icon.png", :alt => "rss feed", class: "card-img-top mt-2", style: "width: 180px") %>
+    <div class="card-body">
+      <h5 class="card-title"> <%= user.username %> </h5>
+      <p class="card-text"> <%= user.articles.count %> Articles written </p>
+      <%= link_to 'View', user_path(user), class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
+</div>

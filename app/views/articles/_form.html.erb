@@ -1,6 +1,22 @@
+<% if @article.errors.any? %>
+<div class="container mt-3 col-6">
+	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		<h4 class="alert-heading text-center">The following errors prevented the article from being submited:</h4>
+		<ul>
+			<% @article.errors.full_messages.each do |error| %>
+				<li>
+					<%= error %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+
+<% end %>
+
 <div class="row justify-content-center mt-4">
 	<div class="col-7">
-		<%= form_with(model: @article,class: "border  bg-light p-5 shadow-sm p-3 mb-5 bg-white rounded", local: true) do |f| %>
+		<%= form_with(model: @article,class: "border  bg-light p-5 shadow-sm p-3 mb-5 bg-white rounded", local: true, data: { turbo: false }) do |f| %>
 			<div class="container">
 		    	<div class="form-group row">
 					<%= f.label :title, class: "col-2 col-form-label " %>

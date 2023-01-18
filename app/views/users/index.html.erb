@@ -7,6 +7,9 @@
       <p class="card-text"> <%= user.articles.count %> Articles written </p>
       <%= link_to 'View', user_path(user), class: 'btn btn-primary' %>
     </div>
+        <div class="card-footer text-muted">
+      Registered <%=time_ago_in_words(user.created_at) %> ago
+    </div>
   </div>
 <% end %>
 </div>

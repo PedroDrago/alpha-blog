@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome #{@user.username} You have successfully signed up!"
       redirect_to articles_path
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'User credentials updated successfully'
       redirect_to @user
     else
-      render 'edit'
+      render 'edit', status: :unprocessable_entity
     end
   end
 
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password_digest)
   end
 
   def set_user

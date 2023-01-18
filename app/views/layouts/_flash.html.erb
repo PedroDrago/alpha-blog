@@ -3,11 +3,11 @@
 
     <div class="container col-5">
       <div class="<%= flash_class(key) %> alert alert-dismissible fade show in">
-       <%# <a href="#" data-dismiss="alert" class="close">×</a>  TURN THIS ON WHEN TURBO IS WORKING%>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         <%= value %>
       </div>
     </div>
-  
+
   
   
   <% end %>

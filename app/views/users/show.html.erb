@@ -3,14 +3,18 @@
 <div class="container border text-center col-2 pt-3 mb-3 pb-3">
   <%= image_tag("gravatar-icon.png", :alt => "rss feed") %>
 </div>
+<% if (logged_in? && current_user == @user) || current_user.admin?%>
+  <div class="container text-center mb-1">
+      <%= link_to 'Edit', edit_user_path, class: 'btn btn-primary' %>
+  </div>
+<% end %>
 <h3 class='text-center'>Articles</h3>
 <% @user.articles.each do |article| %>
   <%= render  'shared/article_card', article: article%>
 <% end %>
 
 <% if logged_in? && current_user == @user %>
-  <div class="container text-center">
-    <%= link_to 'Edit', edit_user_path, class: 'btn btn-secondary' %>
-    <%= link_to 'Back', users_path, class: 'btn btn-secondary' %>
+  <div class="container text-center mb-3">
+    <%= link_to 'Users', users_path, class: 'btn btn-secondary' %>
   </div>
 <% end %>

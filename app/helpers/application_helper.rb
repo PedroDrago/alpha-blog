@@ -5,7 +5,6 @@ module ApplicationHelper
     when :alert then 'alert-danger'
     when :info then 'alert-primary'
     when :warning then 'alert-warning'
-    
     end
   end
 

@@ -3,7 +3,7 @@
         <%= link_to 'Write', new_article_path, class: 'btn btn-primary btn-lg' %>
     </div>
 <% end %>
-<% @articles.each do |article| %>
+<% @articles.reverse.each do |article| %>
     <%= render 'shared/article_card', article: article %>
 <% end %>
 

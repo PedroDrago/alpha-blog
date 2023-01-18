@@ -1,5 +1,8 @@
-
-
+<% if logged_in? %>
+    <div class="container text-center mb-4 mt-4">
+        <%= link_to 'Write', new_article_path, class: 'btn btn-primary btn-lg' %>
+    </div>
+<% end %>
 <% @articles.each do |article| %>
     <%= render 'shared/article_card', article: article %>
 <% end %>

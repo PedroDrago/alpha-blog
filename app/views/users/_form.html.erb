@@ -15,7 +15,7 @@
 			<%= f.label :password_digest, class: 'form-label' %>
 			<%= f.password_field :password_digest, class: 'form-control', placeholder: 'Choose your password' %>
 	  </div>
-		<%= f.submit(@user.new_record? ? "Sign Up" : "Update", class: 'btn btn-primary') %>
+			<%= f.submit(@user.new_record? ? "Sign Up" : "Update", class: 'btn btn-primary') %>
 	<% end %>
 </div>
 

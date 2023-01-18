@@ -1,0 +1,19 @@
+<h1 class='text-center' >Log in Alpha Blog</h1>
+
+<div class="container col-4 mb-3">
+	<%= form_with(scope: :session, url: login_path, class: "border bg-light p-5 shadow-sm p-3 mt-5 bg-white rounded", local: true) do |f| %>
+		  <div class="mb-1">
+			<%= f.label :email, class: 'form-label' %>
+			<%= f.email_field :email, class: 'form-control', placeholder: 'Enter your email address' %>
+	  </div>
+		  <div class="mb-3">
+			<%= f.label :password_digest, class: 'form-label' %>
+			<%= f.password_field :password_digest, class: 'form-control', placeholder: 'Enter your password' %>
+	  </div>
+			<%= f.submit 'Log in', class: 'btn btn-primary' %>
+	<% end %>
+</div>
+
+<div class="container text-center">
+	<%= link_to 'back', '/', class: 'btn btn-secondary' %>
+</div>

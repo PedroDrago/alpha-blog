@@ -1,15 +1,25 @@
-<div class="container  mt-3">
-<% @users.each do |user| %>
-  <div class="card text-center d-inline-block align-items-center" style="width: 18rem;">
-      <%= image_tag("gravatar-icon.png", :alt => "rss feed", class: "card-img-top mt-2", style: "width: 180px") %>
-    <div class="card-body">
-      <h5 class="card-title"> <%= user.username %> </h5>
-      <p class="card-text"> <%= user.articles.count %> Articles written </p>
-      <%= link_to 'View', user_path(user), class: 'btn btn-primary' %>
+
+
+
+<div class="container mt-3">
+  <% @users.each do |user| %>
+    <div class="card mb-1 text-center d-inline-block align-items-center" style="width: 18rem;">
+        <%= image_tag("gravatar-icon.png", :alt => "rss feed", class: "card-img-top mt-2", style: "width: 180px") %>
+      <div class="card-body">
+        <h5 class="card-title"> <%= user.username %> </h5>
+        <p class="card-text"> <%= user.articles.count %> Articles written </p>
+        <%= link_to 'View', user_path(user), class: 'btn btn-primary' %>
+      </div>
+          <div class="card-footer text-muted">
+        Registered <%=time_ago_in_words(user.created_at).gsub('about', '') %> ago
+        <%# maybe this gsub isn't good performance wise. %>
+      </div>
     </div>
-        <div class="card-footer text-muted">
-      Registered <%=time_ago_in_words(user.created_at) %> ago
+  <% end %>
+</div>
+
+<div class="container col-2 mt-3">
+    <div class="digg_pagination">
+        <%= will_paginate @articles, :container => false %>
     </div>
-  </div>
-<% end %>
 </div>

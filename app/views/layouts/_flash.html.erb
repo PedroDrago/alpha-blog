@@ -3,12 +3,12 @@
 
     <div class="container col-5">
       <div class="<%= flash_class(key) %> alert alert-dismissible fade show in">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+
 		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         <%= value %>
       </div>
     </div>
-
-  
   
   <% end %>
 </div>

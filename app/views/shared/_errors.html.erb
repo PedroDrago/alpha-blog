@@ -1,16 +1,18 @@
 <% if object.errors.any? %>
 <div class="container mt-3 col-6">
 	<div class="alert alert-danger alert-dismissible fade show" role="alert">
-		<h4 class="alert-heading text-center">The following errors prevented the <%= object.class.name.downcase %> from being submited:</h4>
-		<ul>
-			<% object.errors.full_messages.each do |error| %>
-				<li>
-					<%= error %>
-				</li>
-			<% end %>
-		</ul>
-		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
+			<h4 class="alert-heading text-center">
+				<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+				The following errors prevented the <%= object.class.name.downcase %> from being submited:
+			</h4>
+			<ul>
+				<% object.errors.full_messages.each do |error| %>
+					<li>
+						<%= error %>
+					</li>
+				<% end %>
+			</ul>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	</div>
 </div>
 <% end %>

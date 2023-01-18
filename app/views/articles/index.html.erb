@@ -6,7 +6,7 @@
     <%= render 'shared/article_card', article: article %>
 <% end %>
 
-<div class="container  col-2">
+<div class="pagination-wrapper">
     <div class="digg_pagination">
         <%= will_paginate @articles, :container => false %>
     </div>

@@ -12,8 +12,8 @@
 			<%= f.email_field :email, class: 'form-control', placeholder: 'Enter your email address' %>
 	  </div>
 		  <div class="mb-3">
-			<%= f.label :password_digest, class: 'form-label' %>
-			<%= f.password_field :password_digest, class: 'form-control', placeholder: 'Choose your password' %>
+			<%= f.label :password, class: 'form-label' %>
+			<%= f.password_field :password, class: 'form-control', placeholder: 'Choose your password'%>
 	  </div>
 			<%= f.submit(@user.new_record? ? "Sign Up" : "Update", class: 'btn btn-primary') %>
 	<% end %>

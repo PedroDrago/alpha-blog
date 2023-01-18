@@ -4,7 +4,12 @@
     <p class="lead">A Ruby on Rails project!</p>
     <hr class="my-4">
     <p>Start writing now!</p>
-    <a class="btn btn-primary btn-lg" href=<%= new_article_path %> role="button">Write</a>
+
+    <% if logged_in? %>
+      <%= link_to 'Write', new_article_path, class: 'btn btn-primary btn-lg' %>
+    <% else %>
+      <%= link_to 'Signup', signup_path, class: 'btn btn-primary btn-lg' %>
+    <% end %>
   </div>
 </div>
 

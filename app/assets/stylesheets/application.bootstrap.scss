@@ -9,24 +9,27 @@
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
     padding: 0.2em 0.5em;
     display: block;
+    border-radius: 10%;
     float: left;
-    margin-right: 1px; }
+    margin-right: 1px;
+    transition: 0.3s; }
   .digg_pagination .disabled {
     color: #999999;
     border: 1px solid #dddddd; }
   .digg_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background: #2e6ab1;
+    background: #0d6efd;
     color: white;
-    border: 1px solid #2e6ab1; }
+    border: 1px solid #0d6efd; }
   .digg_pagination a {
     text-decoration: none;
-    color: #105cb6;
+    color: #0d6efd;
     border: 1px solid #9aafe5; }
-    .digg_pagination a:hover, .digg_pagination a:focus {
-      color: #000033;
-      border-color: #000033; }
+    .digg_pagination a:hover {
+      color: white;
+      border-color: #0d6efd;
+      background-color: #0d6efd; }
   .digg_pagination .page_info {
     background: #2e6ab1;
     color: white;

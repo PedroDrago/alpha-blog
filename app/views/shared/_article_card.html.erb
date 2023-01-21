@@ -3,13 +3,27 @@
     <div class="card-header">
       Created by <%= link_to article.user.username, user_path(article.user) %>
     </div>
+    
     <div class="card-body">
       <h5 class="card-title"> <%= article.title %> </h5>
       <p class="card-text"> <%= truncate(article.description, length: 50) %> </p>
+
+      <div class="container mt-3">
       <a href=<%= article_path(article) %> class="btn btn-outline-primary">Read</a>
+      </div>
+
     </div>
-    <div class="card-footer text-muted">
-      created <%=time_ago_in_words(article.created_at).gsub('about', '') %> ago, edited <%= time_ago_in_words(article.updated_at).gsub('about', '') %> ago
+
+    <div class="card-footer">
+        <div class="container d-inline">
+          <% article.categories.each do |category| %>
+            <a class="badge <%= badge_class(category) %>" href="<%=category_path(category)%> "> <%= category.name %> </a>
+          <% end %>
+        </div>
+
+        <span class="text-muted">
+        created <%=time_ago_in_words(article.created_at).gsub('about', '') %> ago, edited <%= time_ago_in_words(article.updated_at).gsub('about', '') %> ago
+        </span>
     </div>
   </div>
 </div>

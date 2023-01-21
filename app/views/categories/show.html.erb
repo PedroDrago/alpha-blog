@@ -1,1 +1,9 @@
-<h1 class="text-center mt-3"> Category: <%= @category.name %> </h1>
+<h1 class="text-center mt-3"> Category: <span class="badge <%= badge_class(@category) %>   "><%= @category.name %></span> </h1>
+
+<% @category.articles.each do |article|%>
+  <%= render 'shared/article_card', article: article %>
+<% end %>
+
+<div class="container text-center">
+  <%= link_to 'Categories', categories_path, class: 'btn btn-secondary' %>
+</div>

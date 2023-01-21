@@ -1,6 +1,27 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+a {
+  text-decoration: none;
+}
+.text-bg-pink{
+  color: white;
+  background-color: pink;
+}
+.text-bg-pink:hover{
+  color: white;
+  background-color: pink;
+}
+
+
+.text-bg-purple{
+  color: white;
+  background-color: #DB00FF;
+}
+.text-bg-purple:hover{
+  color: white;
+  background-color: #DB00FF;
+}
 // pagination styling
 .digg_pagination {
   background: white;

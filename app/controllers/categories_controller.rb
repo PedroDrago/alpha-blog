@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
+
   def new
     @category = Category.new
 
@@ -25,6 +26,24 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
 
+  end
+
+  def edit
+    @category = Category.find(params[:id])
+
+
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(params.require(:category).permit(:name))
+      flash[:notice] = 'Category was update successfully'
+      redirect_to @category
+    else
+      render 'edit', status: :unprocessable_entity
+    end
+    
+    
   end
 
   private

@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
+  before_action :set_category, only: [:show, :edit, :update]
 
   def new
     @category = Category.new
@@ -7,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(params.require(:category).permit(:name))
+    @category = Category.new(get_params)
     if @category.save
       flash[:notice] = 'Category was successfully created'
       redirect_to @category
@@ -17,7 +18,7 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    @category = Category.find(params[:id])
+
 
   end
 
@@ -29,14 +30,12 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:id])
 
 
   end
 
   def update
-    @category = Category.find(params[:id])
-    if @category.update(params.require(:category).permit(:name))
+    if @category.update(get_params)
       flash[:notice] = 'Category was update successfully'
       redirect_to @category
     else
@@ -47,6 +46,14 @@ class CategoriesController < ApplicationController
   end
 
   private
+  def set_category
+    @category = Category.find(params[:id])
+  end
+
+  def get_params
+    params.require(:category).permit(:name)
+  end
+
   def require_admin
     if !(logged_in? && current_user.admin?)
       flash[:alert] = 'Only admins can perform that action'

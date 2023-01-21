@@ -1,6 +1,8 @@
 <h1 class='text-center' >Edit profile</h1>
 <%= render 'form' %>
  
-<div class="container text-center">
-  <%= link_to 'delete', user_path(current_user), data: { 'turbo-method': :delete, 'turbo-confirm': 'are you sure you want to delete your account?' }, class: 'btn btn-danger mt-2' %>
+
+
+<div class="container text-center mt-2">
+  <%= link_to 'Back to profile', user_path, class: 'btn btn-secondary' %>
 </div>

@@ -16,9 +16,11 @@
 			<%= f.password_field :password, class: 'form-control', placeholder: 'Choose your password'%>
 	  </div>
 			<%= f.submit(@user.new_record? ? "Sign Up" : "Update", class: 'btn btn-primary') %>
+			<br>
+			<% if logged_in? && current_user == @user %>
+  				<%= link_to 'delete', user_path(current_user), data: { 'turbo-method': :delete, 'turbo-confirm': 'are you sure you want to delete your account?' }, class: 'btn btn-danger mt-2' %>
+			<% end %>
 	<% end %>
+
 </div>
 
-<div class="container text-center">
-	<%= link_to 'Return to Profile', user_path, class: 'btn btn-secondary' %>
-</div>
